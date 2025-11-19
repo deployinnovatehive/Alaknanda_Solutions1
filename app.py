@@ -18,5 +18,21 @@ def mice():
 def insurance():
     return render_template('insurance.html')
 
+@app.route('/personal_loan')
+def personal_loan():
+    return render_template('personal_loan.html')
+
+@app.route('/business_loan')
+def business_loan():
+    return render_template('business_loan.html')
+
+@app.route('/home_loan')
+def home_loan():
+    return render_template('home_loan.html')
+
+@app.route('/machine_loan')
+def machine_loan():
+    return render_template('machine_loan.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
