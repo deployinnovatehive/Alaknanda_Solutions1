@@ -3,33 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MICE - Alaknanda Solutions</title>
+    <title>MICE Services - Alaknanda Solutions</title>
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
     />
   </head>
   <body>
-    <!-- Navbar -->
+    <div class="center-watermark">
+      <img
+        src="{{ url_for('static', filename='img/logo 1.png') }}"
+        alt="Alaknanda Solutions Watermark"
+      />
+    </div>
+
     <header class="navbar">
       <div class="logo">
-        <img
-          src="{{ url_for('static', filename='img/logo 1.png') }}"
-          alt="Alaknanda Solutions Logo"
-        />
+        <a href="{{ url_for('index') }}">
+          <img
+            src="{{ url_for('static', filename='img/logo 1.png') }}"
+            alt="Alaknanda Solutions Logo"
+          />
+        </a>
       </div>
       <nav>
-        <div class="hamburger" id="hamburger">
+        <button class="hamburger" id="hamburger">
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
         <ul id="nav-menu">
           <li><a href="{{ url_for('index') }}">Home</a></li>
-          <li>
-            <a href="{{ url_for('index') }}#personal-loan">Personal Loan</a>
-          </li>
-          <li><a href="{{ url_for('index') }}#personal-loan">Home Loan</a></li>
+          <li><a href="{{ url_for('personal_loan') }}">Personal Loan</a></li>
+          <li><a href="{{ url_for('business_loan') }}">Business Loan</a></li>
+          <li><a href="{{ url_for('home_loan') }}">Home Loan</a></li>
+          <li><a href="{{ url_for('machine_loan') }}">Machine Loan</a></li>
+          <li><a href="{{ url_for('index') }}#placement">Placement</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle">More Products</a>
             <div class="dropdown-content">
@@ -44,133 +53,134 @@
             </div>
           </li>
           <li><a href="{{ url_for('index') }}#about-us">About Us</a></li>
-          <li><a href="{{ url_for('index') }}#mission-vision">Mission</a></li>
           <li><a href="{{ url_for('index') }}#contact">Contact Us</a></li>
-          <li><a href="{{ url_for('index') }}#partners">Partner Connect</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- MICE Hero Section -->
     <section class="service-hero">
       <div class="container">
         <h1>MICE Services</h1>
         <p>
-          Comprehensive Meetings, Incentives, Conferences, and Exhibitions
-          solutions for your business needs.
+          Delivering world-class Meetings, Incentives, Conferences, and
+          Exhibitions solutions tailored for corporate excellence.
         </p>
       </div>
     </section>
 
-    <!-- MICE Services Section -->
     <section class="service-details">
       <div class="container">
         <div class="service-content">
-          <h2>What is MICE?</h2>
+          <h2>Corporate Event Management</h2>
           <p>
-            MICE stands for Meetings, Incentives, Conferences, and Exhibitions.
-            At Alaknanda Solutions, we provide end-to-end MICE services that
-            help businesses organize successful corporate events, conferences,
-            and exhibitions.
+            At Alaknanda Solutions, we specialize in end-to-end MICE services.
+            Whether you are planning a strategic board meeting, a large-scale
+            international conference, or a rewarding incentive trip for your top
+            performers, our dedicated team ensures flawless execution.
           </p>
 
           <div class="service-grid">
             <div class="service-item">
               <h3>Meetings</h3>
               <p>
-                Professional meeting planning and coordination for corporate
-                gatherings, board meetings, and strategic sessions.
+                Strategic planning and seamless coordination for high-stakes
+                corporate gatherings.
               </p>
               <ul>
-                <li>Venue selection and booking</li>
-                <li>Audio-visual equipment setup</li>
-                <li>Catering arrangements</li>
-                <li>Logistics management</li>
+                <li>Board Meetings & AGMs</li>
+                <li>Strategy Planning Sessions</li>
+                <li>Venue Selection & Logistics</li>
+                <li>Audio-Visual Support</li>
               </ul>
             </div>
 
             <div class="service-item">
               <h3>Incentives</h3>
               <p>
-                Motivational programs and incentive travel arrangements to
-                reward and recognize employee performance.
+                Reward your team with unforgettable travel experiences that
+                drive motivation.
               </p>
               <ul>
-                <li>Custom incentive programs</li>
-                <li>Travel and accommodation booking</li>
-                <li>Experience planning</li>
-                <li>Budget management</li>
+                <li>Domestic & International Tours</li>
+                <li>Luxury Resort Bookings</li>
+                <li>Team Building Activities</li>
+                <li>Gala Dinners & Entertainment</li>
               </ul>
             </div>
 
             <div class="service-item">
               <h3>Conferences</h3>
               <p>
-                Large-scale conference organization with comprehensive event
-                management and coordination.
+                Large-scale event management designed to facilitate networking
+                and knowledge exchange.
               </p>
               <ul>
-                <li>Conference planning</li>
-                <li>Speaker management</li>
-                <li>Registration systems</li>
-                <li>Marketing and promotion</li>
+                <li>End-to-End Event Management</li>
+                <li>Delegate Registration Systems</li>
+                <li>Speaker & VIP Management</li>
+                <li>Live Streaming & Hybrid Events</li>
               </ul>
             </div>
 
             <div class="service-item">
               <h3>Exhibitions</h3>
               <p>
-                Trade show and exhibition management services for maximum impact
-                and ROI.
+                Showcase your brand effectively with our professional exhibition
+                services.
               </p>
               <ul>
-                <li>Booth design and setup</li>
-                <li>Lead generation</li>
-                <li>Attendee management</li>
-                <li>Post-event analysis</li>
+                <li>Stall Design & Fabrication</li>
+                <li>Trade Show Logistics</li>
+                <li>Brand Activation</li>
+                <li>Promotional Material Support</li>
               </ul>
             </div>
           </div>
 
           <div class="service-benefits">
-            <h3>Why Choose Our MICE Services?</h3>
+            <h3>Why Partner With Us?</h3>
             <div class="benefits-grid">
               <div class="benefit">
-                <h4>Expertise</h4>
-                <p>Years of experience in event management and coordination</p>
-              </div>
-              <div class="benefit">
-                <h4>Customization</h4>
-                <p>Tailored solutions to meet your specific requirements</p>
-              </div>
-              <div class="benefit">
-                <h4>Network</h4>
+                <h4>Tailored Solutions</h4>
                 <p>
-                  Extensive network of venues, vendors, and service providers
+                  Every event is customized to align with your brand's
+                  objectives and budget.
                 </p>
               </div>
               <div class="benefit">
-                <h4>Quality</h4>
-                <p>Commitment to delivering high-quality, successful events</p>
+                <h4>Global Network</h4>
+                <p>
+                  Strong partnerships with hotels, airlines, and vendors
+                  worldwide.
+                </p>
+              </div>
+              <div class="benefit">
+                <h4>Cost Efficiency</h4>
+                <p>Competitive pricing and negotiation to maximize your ROI.</p>
+              </div>
+              <div class="benefit">
+                <h4>Flawless Execution</h4>
+                <p>
+                  Dedicated on-site support to ensure your event runs smoothly.
+                </p>
               </div>
             </div>
           </div>
 
           <div class="cta-section">
-            <h3>Ready to Plan Your Next Event?</h3>
+            <h3>Plan Your Next Corporate Event</h3>
             <p>
-              Contact us today to discuss your MICE requirements and get a
-              customized solution.
+              Let us handle the details while you focus on your business. Get in
+              touch for a customized MICE proposal.
             </p>
-            <a href="{{ url_for('index') }}#contact" class="cta-btn"
-              >Get in Touch</a
-            >
+            <a href="{{ url_for('index') }}#contact" class="cta-btn">
+              Request a Proposal
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-main">
@@ -198,7 +208,7 @@
                     >Mission & Vision</a
                   >
                 </li>
-                <li><a href="{{ url_for('index') }}">Services</a></li>
+                <li><a href="{{ url_for('index') }}#services">Services</a></li>
                 <li><a href="{{ url_for('index') }}#contact">Contact</a></li>
               </ul>
             </div>
@@ -207,17 +217,14 @@
               <h4>Our Services</h4>
               <ul>
                 <li>
-                  <a href="{{ url_for('index') }}#personal-loan"
-                    >Personal Loan</a
-                  >
+                  <a href="{{ url_for('personal_loan') }}">Personal Loan</a>
                 </li>
                 <li>
-                  <a href="{{ url_for('index') }}#personal-loan"
-                    >Business Loan</a
-                  >
+                  <a href="{{ url_for('business_loan') }}">Business Loan</a>
                 </li>
+                <li><a href="{{ url_for('home_loan') }}">Home Loan</a></li>
                 <li>
-                  <a href="{{ url_for('index') }}#personal-loan">Home Loan</a>
+                  <a href="{{ url_for('machine_loan') }}">Machine Loan</a>
                 </li>
                 <li><a href="{{ url_for('mice') }}">MICE</a></li>
                 <li><a href="{{ url_for('insurance') }}">Insurance</a></li>
@@ -228,14 +235,20 @@
               <h4>Contact Info</h4>
               <div class="contact-details">
                 <p>
-                  <i class="location-icon"></i> FB-147, High Street Business
-                  Park,<br />Kapurwadi, Thane (W)-400 607, Maharashtra
+                  <i class="location-icon"></i>
+                  <span
+                    >FB-147, High Street Business Park,<br />Kapurwadi, Thane
+                    (W)-400 607, Maharashtra</span
+                  >
                 </p>
                 <p>
-                  <i class="phone-icon"></i> +91 9769207860 | +91 9702001230 |
-                  +91 9987600400
+                  <i class="phone-icon"></i>
+                  <span>+91 9769207860 | +91 9702001230</span>
                 </p>
-                <p><i class="email-icon"></i> info@alaknandasolutions.in</p>
+                <p>
+                  <i class="email-icon"></i>
+                  <span>info@alaknandasolutions.in</span>
+                </p>
               </div>
             </div>
           </div>
@@ -245,7 +258,19 @@
           <div class="footer-bottom-content">
             <p>© 2025 Alaknanda Solutions. All rights reserved.</p>
             <p class="developed-by">
-              Developed with ❤️ by <span>InnovateHive</span>
+              Developed by
+              <span>
+                <a
+                  href="https://www.innovatehive.in/"
+                  target="_blank"
+                  style="
+                    text-decoration: none;
+                    color: inherit;
+                    font-weight: 600;
+                  "
+                  >InnovateHive</a
+                >
+              </span>
             </p>
           </div>
         </div>
