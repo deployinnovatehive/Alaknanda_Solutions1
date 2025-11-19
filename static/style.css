@@ -69,7 +69,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;
+  padding: 10px 50px;
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow);
@@ -80,7 +80,7 @@ img {
 }
 
 .navbar .logo img {
-  height: 50px;
+  height: 45px;
   width: auto;
   transition: var(--transition);
   filter: grayscale(100%) brightness(0.3);
@@ -90,17 +90,29 @@ img {
   transform: scale(1.05);
 }
 
+.navbar nav {
+  margin-left: auto;
+  padding-left: 60px; /* adjust as needed */
+   display: flex;
+  align-items: center;
+}
+
+
+
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
 }
 
 .navbar ul li a {
   text-decoration: none;
   color: var(--text-dark);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   transition: var(--transition);
   position: relative;
   padding: 8px 12px;
@@ -537,6 +549,30 @@ img {
 }
 
 .service-card a:hover::after {
+  transform: translateX(3px);
+}
+
+.service-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.check-eligibility {
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.check-eligibility::after {
+  content: '→';
+  margin-left: 8px;
+  transition: var(--transition);
+}
+
+.service-card-link:hover .check-eligibility::after {
   transform: translateX(3px);
 }
 
@@ -1435,7 +1471,7 @@ img {
   }
 
   .hero {
-    padding: 50px var(--container-padding);
+    /* padding: 50px var(--container-padding); */
     min-height: 70vh;
   }
 
@@ -1570,6 +1606,33 @@ img {
     font-size: 0.75rem;
     padding: 6px 10px;
   }
+  .hero-slider {
+    min-height: 250px;
+    height: auto;
+    overflow: hidden; /* KEY FIX: Hides overflowing slides */
+  }
+
+  /* Ensures slides transition smoothly on mobile without conflicting with absolute positioning */
+  .hero-slide {
+    flex-direction: column;
+    position: absolute; /* Ensures all slides are stacked */
+    width: 100%;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.5s ease;
+    padding: 0;
+    top: 0;
+    left: 0;
+  }
+
+  .hero-slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    position: relative; /* Brings the active slide forward */
+  }
+
+  /* Ensures the slider height adapts to the image on mobile */
+
 }
 
 /* -------------------- SMALL MOBILE STYLES -------------------- */
@@ -1652,23 +1715,25 @@ img {
   }
 
   .hero {
-    padding: 60px var(--container-padding) 40px;
+    padding: 0; /* Changed from 60px/40px */
     min-height: auto;
     text-align: center;
   }
 
   .hero-slider {
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Hides overlapping slides */
+    height: auto;
+    min-height: 200px; /* Minimum space for the banner */
   }
 
   .hero-slide {
     position: absolute;
     width: 100%;
     opacity: 0;
-    transform: translateX(100%);
+    /* transform: translateX(100%); */
     transition: all 0.5s ease;
-    padding: 20px 0;
+    padding: 0;
   }
 
   .hero-slide.active {
@@ -1676,7 +1741,12 @@ img {
     transform: translateX(0);
     position: relative;
   }
-
+/* Fix image scaling if needed */
+  .hero-slide img {
+    height: auto;
+    width: 100%;
+    display: block;
+  }
   .hero-text {
     margin-bottom: 30px;
   }
@@ -1890,5 +1960,244 @@ img {
   .whatsapp-icon {
     width: 50px;
     height: 50px;
+  }
+  .hero-slide {
+    padding: 0;
+  }
+
+  /* Ensures the slider container itself wraps the content */
+  .hero-slider {
+    min-height: 200px;
+  }
+}
+
+/* =============================================================================
+   CENTER STICKY WATERMARK LOGO
+   ============================================================================= */
+.center-watermark {
+  position: fixed;          /* Makes it sticky relative to the screen */
+  top: 50%;                 /* Center vertically */
+  left: 50%;                /* Center horizontally */
+  transform: translate(-50%, -50%); /* Perfect centering alignment */
+  z-index: 10000;           /* Ensures it stays on top (or lower it to 0 to put behind text) */
+  pointer-events: none;     /* CRITICAL: Allows clicks to pass through the logo to buttons behind it */
+  opacity: 0.3;             /* Less opacity (Adjust between 0.1 and 1.0 as preferred) */
+  width: 157px;             /* Requested Width */
+  height: 93px;             /* Requested Height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-watermark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;      /* Ensures image doesn't distort */
+  background-color: transparent; /* Ensures background is transparent */
+}
+
+/* Optional: Hide on very small screens if it blocks the view too much */
+@media (max-width: 600px) {
+  .center-watermark {
+    width: 100px;  /* Slightly smaller on mobile */
+    height: auto;
+    opacity: 0.15; /* Even less opacity on mobile to avoid distraction */
+  }
+}
+
+/* =============================================================================
+   INSURANCE & MICE PAGE STYLES (ADD TO BOTTOM OF STYLE.CSS)
+   ============================================================================= */
+
+/* --- Page Hero Section --- */
+.service-hero {
+  background: linear-gradient(135deg, var(--bg-light) 0%, #e2e8f0 100%);
+  padding: 80px var(--container-padding);
+  text-align: center;
+  position: relative;
+}
+
+.service-hero h1 {
+  font-size: 3rem;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.service-hero p {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- Generic Container for these pages --- */
+.service-details .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Main Content Wrapper --- */
+.service-details {
+  padding: 60px var(--container-padding);
+  background: var(--bg-white);
+}
+
+.service-content h2 {
+  font-size: 2.2rem;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  margin-top: 40px; /* Spacing from previous section */
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Paragraphs under headers */
+.service-content > p {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 50px;
+  font-size: 1.1rem;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+/* --- Grid Layouts (Used for Services, Types, Benefits, Features) --- */
+.service-grid, 
+.insurance-grid, 
+.benefits-grid, 
+.features-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive Grid */
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+/* --- Card Styles --- */
+.service-item, 
+.insurance-item, 
+.benefit, 
+.feature {
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Makes cards equal height */
+}
+
+/* Card Hover Effect */
+.service-item:hover, 
+.insurance-item:hover, 
+.benefit:hover, 
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--secondary-color);
+}
+
+/* Card Headers */
+.service-item h3, 
+.insurance-item h4, 
+.benefit h4, 
+.feature h4 {
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(0,0,0,0.05);
+  padding-bottom: 10px;
+}
+
+/* Card Text */
+.service-item p, 
+.insurance-item p, 
+.benefit p, 
+.feature p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* --- Lists inside Cards --- */
+.service-item ul {
+  list-style: none;
+  padding: 0;
+  margin-top: auto; /* Pushes list to bottom if text is short */
+}
+
+.service-item ul li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.service-item ul li::before {
+  content: '•';
+  color: var(--accent-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+/* --- CTA Section (Bottom of page) --- */
+.cta-section {
+  text-align: center;
+  background: linear-gradient(135deg, #f7fafc, #edf2f7);
+  padding: 60px 40px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  margin-top: 60px;
+}
+
+.cta-section h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+}
+
+.cta-section p {
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+
+.cta-btn {
+  background: linear-gradient(135deg, #718096, #4a5568);
+  color: white;
+  padding: 15px 45px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* --- Responsive adjustments for Insurance Page --- */
+@media (max-width: 768px) {
+  .service-hero {
+    padding: 50px 20px;
+  }
+  .service-hero h1 {
+    font-size: 2.2rem;
+  }
+  .service-details {
+    padding: 40px 20px;
   }
 }
