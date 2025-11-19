@@ -4,167 +4,241 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alaknanda Solutions - Financial Services</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
   </head>
   <body>
+    <div class="center-watermark">
+      <img
+        src="{{ url_for('static', filename='img/logo 1.png') }}"
+        alt="Alaknanda Solutions Watermark"
+      />
+    </div>
     <!-- Skip to main content for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Navbar -->
-    <header class="navbar" role="banner">
+    <header class="navbar">
       <div class="logo">
-        <img
-          src="{{ url_for('static', filename='img/logo 1.png') }}"
-          alt="Alaknanda Solutions Logo"
-        />
+        <a href="{{ url_for('index') }}">
+          <img
+            src="{{ url_for('static', filename='img/logo 1.png') }}"
+            alt="Alaknanda Solutions Logo"
+          />
+        </a>
       </div>
-      <nav role="navigation" aria-label="Main Navigation">
-        <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="nav-menu">
+      <nav>
+        <button class="hamburger" id="hamburger">
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <ul id="nav-menu" role="menubar">
-          <li role="none"><a href="#home" role="menuitem">Home</a></li>
-          <li role="none"><a href="#personal-loan" role="menuitem">Personal Loan</a></li>
-          <li role="none"><a href="#business-loan" role="menuitem">Business Loan</a></li>
-          <li role="none"><a href="#placement" role="menuitem">Placement</a></li>
-          <li class="dropdown" role="none">
-            <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">More Products</a>
-            <div class="dropdown-content" role="menu">
+        <ul id="nav-menu">
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('personal_loan') }}">Personal Loan</a></li>
+          <li><a href="{{ url_for('business_loan') }}">Business Loan</a></li>
+          <li><a href="{{ url_for('home_loan') }}">Home Loan</a></li>
+          <li><a href="{{ url_for('machine_loan') }}">Machine Loan</a></li>
+          <li><a href="{{ url_for('index') }}#placement">Placement</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">More Products</a>
+            <div class="dropdown-content">
               <div class="dropdown-header">
                 <h4>Alaknanda Solution</h4>
                 <span>(Proprietor form)</span>
               </div>
-              <ul class="dropdown-menu" role="menu">
-                <li role="none"><a href="mice.html" role="menuitem">MICE</a></li>
-                <li role="none"><a href="insurance.html" role="menuitem">Insurance</a></li>
+              <ul class="dropdown-menu">
+                <li><a href="{{ url_for('mice') }}">MICE</a></li>
+                <li><a href="{{ url_for('insurance') }}">Insurance</a></li>
               </ul>
             </div>
           </li>
-          <li role="none"><a href="#about-us" role="menuitem">About Us</a></li>
-          <li role="none"><a href="#contact" role="menuitem">Contact Us</a></li>
+          <li><a href="{{ url_for('index') }}#about-us">About Us</a></li>
+          <li><a href="{{ url_for('index') }}#contact">Contact Us</a></li>
         </ul>
       </nav>
     </header>
 
     <main id="main-content">
       <!-- Hero Section -->
-      <section id="home" class="hero" aria-label="Hero Slider">
-        <div class="hero-slider">
-          <!-- Slide 1: Personal Loan -->
-          <div class="hero-slide active" aria-label="Personal Loan Slide">
-            <div class="hero-text">
-              <h1>Need a <span>Personal Loan</span></h1>
-              <p>
-                Get instant personal loans with competitive interest rates and
-                flexible repayment options.
-              </p>
-            </div>
-            <div class="hero-image">
+      <!-- Hero Section -->
+      <section
+        id="home"
+        class="hero"
+        aria-label="Hero Slider"
+        style="padding: 0; background: none; min-height: auto"
+      >
+        <div class="hero-slider" style="height: auto; min-height: 400px">
+          <div
+            class="hero-slide active"
+            aria-label="Personal Loan Slide"
+            style="position: relative; width: 100%"
+          >
+            <a
+              href="{{ url_for('personal_loan') }}"
+              style="display: block; width: 100%"
+            >
               <img
-                src="{{ url_for('static', filename='img/509020-PI3106-79.jpg') }}"
-                alt="Person reviewing loan documents on tablet"
-                loading="lazy"
+                src="{{ url_for('static', filename='img/AS2.png') }}"
+                alt="Personal Loan Offer Banner"
+                loading="eager"
+                style="
+                  width: 100%;
+                  height: auto;
+                  min-height: 400px;
+                  object-fit: cover;
+                  border-radius: 0;
+                  box-shadow: none;
+                  max-width: none;
+                "
               />
-            </div>
+            </a>
           </div>
 
-          <!-- Slide 2: Business Loan -->
-          <div class="hero-slide" aria-label="Business Loan Slide">
-            <div class="hero-text">
-              <h1>Unsecured <span>Business Loan</span></h1>
-              <p>
-                Get unsecured Business Loan from India's top lenders basis
-                business banking and financial.
-              </p>
-            </div>
-            <div class="hero-image">
+          <div
+            class="hero-slide"
+            aria-label="Business Loan Slide"
+            style="position: absolute; top: 0; left: 0; width: 100%"
+          >
+            <a
+              href="{{ url_for('business_loan') }}"
+              style="display: block; width: 100%"
+            >
               <img
-                src="{{ url_for('static', filename='img/picture-two-young-businessmen-street-shaking-hands.jpg') }}"
-                alt="Two businessmen shaking hands on the street"
+                src="{{ url_for('static', filename='img/AS1.png') }}"
+                alt="Business Loan Offer Banner"
                 loading="lazy"
+                style="
+                  width: 100%;
+                  height: auto;
+                  min-height: 400px;
+                  object-fit: cover;
+                  border-radius: 0;
+                  box-shadow: none;
+                  max-width: none;
+                "
               />
-            </div>
+            </a>
           </div>
         </div>
 
-        <div class="slider-dots" role="tablist">
-          <button class="dot active" data-slide="0" role="tab" aria-label="Show Personal Loan Slide" aria-selected="true"></button>
-          <button class="dot" data-slide="1" role="tab" aria-label="Show Business Loan Slide" aria-selected="false"></button>
+        <div
+          class="slider-dots"
+          role="tablist"
+          style="
+            bottom: 20px;
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+          "
+        >
+          <button
+            class="dot active"
+            data-slide="0"
+            role="tab"
+            aria-label="Show Slide 1"
+            aria-selected="true"
+          ></button>
+          <button
+            class="dot"
+            data-slide="1"
+            role="tab"
+            aria-label="Show Slide 2"
+            aria-selected="false"
+          ></button>
         </div>
       </section>
-
       <!-- Loan & Services Section -->
       <section class="services" aria-labelledby="services-heading">
         <h2 id="services-heading">Types of Loans</h2>
         <div class="service-card-container">
-          <div class="service-card">
-            <img
-              src="{{ url_for('static', filename='img/PL.png') }}"
-              alt="Personal Loan Icon"
-              loading="lazy"
-            />
-            <h3>PERSONAL LOAN</h3>
-            <p>
-              This allows consumers to compare the key loan features offered by
-              top lenders.
-            </p>
-            <a href="#personal-loan">Check Eligibility →</a>
-          </div>
+          <a href="/personal_loan" class="service-card-link">
+            <div class="service-card">
+              <img
+                src="{{ url_for('static', filename='img/PL.png') }}"
+                alt="Personal Loan Icon"
+                loading="lazy"
+              />
+              <h3>PERSONAL LOAN</h3>
+              <p>
+                This allows consumers to compare the key loan features offered
+                by top lenders.
+              </p>
+              <span class="check-eligibility">Check Eligibility →</span>
+            </div>
+          </a>
 
-          <div class="service-card">
-            <img
-              src="{{ url_for('static', filename='img/BL.png') }}"
-              alt="Business Loan Icon"
-              loading="lazy"
-            />
-            <h3>BUSINESS LOAN</h3>
-            <p>
-              Expand your business with loans & overdrafts at low interest rates
-              from Banks & NBFCs.
-            </p>
-            <a href="#business-loan">Check Eligibility →</a>
-          </div>
+          <a href="/business_loan" class="service-card-link">
+            <div class="service-card">
+              <img
+                src="{{ url_for('static', filename='img/BL.png') }}"
+                alt="Business Loan Icon"
+                loading="lazy"
+              />
+              <h3>BUSINESS LOAN</h3>
+              <p>
+                Expand your business with loans & overdrafts at low interest
+                rates from Banks & NBFCs.
+              </p>
+              <span class="check-eligibility">Check Eligibility →</span>
+            </div>
+          </a>
 
-          <div class="service-card">
-            <img
-              src="{{ url_for('static', filename='img/HL.png') }}"
-              alt="Home Loan Icon"
-              loading="lazy"
-            />
-            <h3>HOME LOAN / LAP</h3>
-            <p>
-              Get Home loans for your dream home & encash your property for
-              business/non-business needs.
-            </p>
-            <a href="#home-loan">Check Eligibility →</a>
-          </div>
+          <a href="/home_loan" class="service-card-link">
+            <div class="service-card">
+              <img
+                src="{{ url_for('static', filename='img/HL.png') }}"
+                alt="Home Loan Icon"
+                loading="lazy"
+              />
+              <h3>HOME LOAN / LAP</h3>
+              <p>
+                Get Home loans for your dream home & encash your property for
+                business/non-business needs.
+              </p>
+              <span class="check-eligibility">Check Eligibility →</span>
+            </div>
+          </a>
 
-          <div class="service-card">
-            <img
-              src="{{ url_for('static', filename='img/ML.png') }}"
-              alt="Machine Loan Icon"
-              loading="lazy"
-            />
-            <h3>MACHINE LOAN</h3>
-            <p>
-              Get financing for industrial machinery and equipment at competitive
-              rates.
-            </p>
-            <a href="#machine-loan">Check Eligibility →</a>
-          </div>
+          <a href="/machine_loan" class="service-card-link">
+            <div class="service-card">
+              <img
+                src="{{ url_for('static', filename='img/ML.png') }}"
+                alt="Machine Loan Icon"
+                loading="lazy"
+              />
+              <h3>MACHINE LOAN</h3>
+              <p>
+                Get financing for industrial machinery and equipment at
+                competitive rates.
+              </p>
+              <span class="check-eligibility">Check Eligibility →</span>
+            </div>
+          </a>
         </div>
       </section>
 
       <!-- Loan Offers Section -->
-      <section id="personal-loan" class="offers" aria-labelledby="personal-loan-heading">
+      <section
+        id="personal-loan"
+        class="offers"
+        aria-labelledby="personal-loan-heading"
+      >
         <div class="offer">
           <div class="offer-img">
-            <img src="{{ url_for('static', filename='img/PL2[1].png') }}" alt="Illustration of personal loan benefits" loading="lazy" />
+            <img
+              src="{{ url_for('static', filename='img/PL2[1].png') }}"
+              alt="Illustration of personal loan benefits"
+              loading="lazy"
+            />
           </div>
           <div class="offer-details">
-            <h2 id="personal-loan-heading">Personal Loan offers from Leading bank's and NBFC'S</h2>
+            <h2 id="personal-loan-heading">
+              Personal Loan offers from Leading bank's and NBFC'S
+            </h2>
             <div class="offer-points">
               <ul>
                 <li>⦿ Unsecured Salaried Personal Loans upto ₹1 Cr *</li>
@@ -172,7 +246,9 @@
                 <li>⦿ Quick & Easy process</li>
               </ul>
               <ul>
-                <li>⦿ Rate Of Interest starts from 10.45% on reducing balance</li>
+                <li>
+                  ⦿ Rate Of Interest starts from 10.45% on reducing balance
+                </li>
                 <li>
                   ⦿ Convert Credit Card outstanding from 70% reducing to 15%
                 </li>
@@ -217,20 +293,24 @@
           <h2 id="about-heading">About Alaknanda Solutions</h2>
           <p>
             Founded and led by Mr. Mukesh Manjkhola, a banking and finance
-            professional with over 32 years of experience, Alaknanda Solutions is
-            a trusted name in financial consulting and loan advisory services.
-            With deep expertise in strategic planning, channel management, and
-            nationwide business operations, the company provides personalized
-            financial solutions that empower both individuals and businesses.
-            Committed to transparency, integrity, and results, Alaknanda Solutions
-            ensures every client receives expert guidance and meaningful support
-            throughout their financial journey.
+            professional with over 32 years of experience, Alaknanda Solutions
+            is a trusted name in financial consulting and loan advisory
+            services. With deep expertise in strategic planning, channel
+            management, and nationwide business operations, the company provides
+            personalized financial solutions that empower both individuals and
+            businesses. Committed to transparency, integrity, and results,
+            Alaknanda Solutions ensures every client receives expert guidance
+            and meaningful support throughout their financial journey.
           </p>
         </div>
       </section>
 
       <!-- Mission, Vision & Values Section -->
-      <section id="mission-vision" class="mission-vision" aria-labelledby="mission-vision-heading">
+      <section
+        id="mission-vision"
+        class="mission-vision"
+        aria-labelledby="mission-vision-heading"
+      >
         <div class="container">
           <h2 id="mission-vision-heading">Our Mission, Vision & Values</h2>
           <div class="mv-grid">
@@ -245,9 +325,9 @@
             <div class="mv-card">
               <h3>Our Vision</h3>
               <p>
-                "To be the most trusted and preferred service partner, recognized
-                for delivering excellence, innovation, and value across every
-                client interaction."
+                "To be the most trusted and preferred service partner,
+                recognized for delivering excellence, innovation, and value
+                across every client interaction."
               </p>
             </div>
             <div class="mv-card">
@@ -264,7 +344,11 @@
       </section>
 
       <!-- Partners Section -->
-      <section id="partners" class="partners" aria-labelledby="partners-heading">
+      <section
+        id="partners"
+        class="partners"
+        aria-labelledby="partners-heading"
+      >
         <h2 id="partners-heading">All Leading banking and NBFCS</h2>
         <div class="partner-logos">
           <img
@@ -311,7 +395,11 @@
       </section>
 
       <!-- Contact Us Section -->
-      <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+      <section
+        id="contact"
+        class="contact-section"
+        aria-labelledby="contact-heading"
+      >
         <div class="container">
           <h2 id="contact-heading">Get in Touch</h2>
           <div class="contact-content">
@@ -361,15 +449,18 @@
               <h3>Contact Details</h3>
               <div class="contact-details">
                 <p>
-                  <i class="location-icon" aria-hidden="true"></i> 
-                  <span>FB-147, High Street Business Park,<br />Kapurwadi, Thane (W)-400 607, Maharashtra</span>
+                  <i class="location-icon" aria-hidden="true"></i>
+                  <span
+                    >FB-147, High Street Business Park,<br />Kapurwadi, Thane
+                    (W)-400 607, Maharashtra</span
+                  >
                 </p>
                 <p>
-                  <i class="phone-icon" aria-hidden="true"></i> 
+                  <i class="phone-icon" aria-hidden="true"></i>
                   <span>+91 9769207860 | +91 9702001230</span>
                 </p>
                 <p>
-                  <i class="email-icon" aria-hidden="true"></i> 
+                  <i class="email-icon" aria-hidden="true"></i>
                   <span>info@alaknandasolutions.in</span>
                 </p>
               </div>
@@ -380,7 +471,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer" role="contentinfo">
+    <footer class="footer">
       <div class="footer-container">
         <div class="footer-main">
           <div class="footer-brand">
@@ -388,7 +479,6 @@
               src="{{ url_for('static', filename='img/logo 1.png') }}"
               alt="Alaknanda Solutions Logo"
               class="footer-logo"
-              loading="lazy"
             />
             <h3>Alaknanda Solutions</h3>
             <p>
@@ -401,21 +491,33 @@
             <div class="footer-section">
               <h4>Quick Links</h4>
               <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about-us">About Us</a></li>
-                <li><a href="#mission-vision">Mission & Vision</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('index') }}#about-us">About Us</a></li>
+                <li>
+                  <a href="{{ url_for('index') }}#mission-vision"
+                    >Mission & Vision</a
+                  >
+                </li>
+                <li><a href="{{ url_for('index') }}#services">Services</a></li>
+                <li><a href="{{ url_for('index') }}#contact">Contact</a></li>
               </ul>
             </div>
 
             <div class="footer-section">
               <h4>Our Services</h4>
               <ul>
-                <li><a href="#personal-loan">Personal Loan</a></li>
-                <li><a href="#business-loan">Business Loan</a></li>
-                <li><a href="#home-loan">Home Loan</a></li>
-                <li><a href="#machine-loan">Machine Loan</a></li>
+                <li>
+                  <a href="{{ url_for('personal_loan') }}">Personal Loan</a>
+                </li>
+                <li>
+                  <a href="{{ url_for('business_loan') }}">Business Loan</a>
+                </li>
+                <li><a href="{{ url_for('home_loan') }}">Home Loan</a></li>
+                <li>
+                  <a href="{{ url_for('machine_loan') }}">Machine Loan</a>
+                </li>
+                <li><a href="{{ url_for('mice') }}">MICE</a></li>
+                <li><a href="{{ url_for('insurance') }}">Insurance</a></li>
               </ul>
             </div>
 
@@ -423,15 +525,18 @@
               <h4>Contact Info</h4>
               <div class="contact-details">
                 <p>
-                  <i class="location-icon" aria-hidden="true"></i> 
-                  <span>FB-147, High Street Business Park,<br />Kapurwadi, Thane (W)-400 607, Maharashtra</span>
+                  <i class="location-icon"></i>
+                  <span
+                    >FB-147, High Street Business Park,<br />Kapurwadi, Thane
+                    (W)-400 607, Maharashtra</span
+                  >
                 </p>
                 <p>
-                  <i class="phone-icon" aria-hidden="true"></i> 
+                  <i class="phone-icon"></i>
                   <span>+91 9769207860 | +91 9702001230</span>
                 </p>
                 <p>
-                  <i class="email-icon" aria-hidden="true"></i> 
+                  <i class="email-icon"></i>
                   <span>info@alaknandasolutions.in</span>
                 </p>
               </div>
@@ -443,7 +548,19 @@
           <div class="footer-bottom-content">
             <p>© 2025 Alaknanda Solutions. All rights reserved.</p>
             <p class="developed-by">
-              Developed with by <span>InnovateHive</span>
+              Developed by
+              <span>
+                <a
+                  href="https://www.innovatehive.in/"
+                  target="_blank"
+                  style="
+                    text-decoration: none;
+                    color: inherit;
+                    font-weight: 600;
+                  "
+                  >InnovateHive</a
+                >
+              </span>
             </p>
           </div>
         </div>
@@ -452,8 +569,17 @@
 
     <!-- WhatsApp Floating Button -->
     <div class="whatsapp-float">
-      <a href="https://wa.me/919702001230" target="_blank" class="whatsapp-link" aria-label="Contact us on WhatsApp">
-        <img src="{{ url_for('static', filename='img/WhatsApp.png') }}" alt="WhatsApp" class="whatsapp-icon">
+      <a
+        href="https://wa.me/919702001230"
+        target="_blank"
+        class="whatsapp-link"
+        aria-label="Contact us on WhatsApp"
+      >
+        <img
+          src="{{ url_for('static', filename='img/WhatsApp.png') }}"
+          alt="WhatsApp"
+          class="whatsapp-icon"
+        />
         <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
       </a>
     </div>
