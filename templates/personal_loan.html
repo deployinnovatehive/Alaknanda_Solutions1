@@ -4,9 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Loan - Alaknanda Solutions</title>
-    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
   </head>
   <body>
+    <div class="center-watermark">
+      <img
+        src="{{ url_for('static', filename='img/logo 1.png') }}"
+        alt="Alaknanda Solutions Watermark"
+      />
+    </div>
+
     <!-- Skip to main content for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -352,6 +359,6 @@
       </a>
     </div>
 
-    <script src="/static/script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
   </body>
 </html>
