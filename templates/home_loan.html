@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Loan / LAP - Alaknanda Solutions</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">
+        <a href="{{ url_for('index') }}">
+          <img
+            src="{{ url_for('static', filename='img/logo 1.png') }}"
+            alt="Alaknanda Solutions Logo"
+          />
+        </a>
+      </div>
+      <nav>
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul id="nav-menu">
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('personal_loan') }}">Personal Loan</a></li>
+          <li><a href="{{ url_for('business_loan') }}">Business Loan</a></li>
+          <li><a href="{{ url_for('home_loan') }}">Home Loan</a></li>
+          <li><a href="{{ url_for('machine_loan') }}">Machine Loan</a></li>
+          <li><a href="{{ url_for('index') }}#placement">Placement</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">More Products</a>
+            <div class="dropdown-content">
+              <div class="dropdown-header">
+                <h4>Alaknanda Solution</h4>
+                <span>(Proprietor form)</span>
+              </div>
+              <ul class="dropdown-menu">
+                <li><a href="{{ url_for('mice') }}">MICE</a></li>
+                <li><a href="{{ url_for('insurance') }}">Insurance</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="{{ url_for('index') }}#about-us">About Us</a></li>
+          <li><a href="{{ url_for('index') }}#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <!-- Hero Section -->
+      <section class="hero" aria-label="Personal Loan Hero">
+        <div class="hero-text">
+          <h1>Get Home <span>Loans</span> for your dream home</h1>
+          <p>
+            Home loans and Loan Against Property (LAP) for purchase,
+            construction, and refinancing needs.
+          </p>
+        </div>
+        <div class="hero-image">
+          <img
+            src="/static/img/high-angle-banknotes-with-lock-house.jpg"
+            alt="High angle view of banknotes with lock and house"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      <!-- Eligibility Section -->
+      <section
+        class="services"
+        aria-labelledby="eligibility-heading"
+        style="text-align: center"
+      >
+        <h2 id="eligibility-heading" style="margin-bottom: 20px">
+          Check Eligibility
+        </h2>
+        <p
+          style="
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            color: var(--text-light);
+          "
+        >
+          Find out if you qualify. Fill out the form below to get started.
+        </p>
+
+        <a
+          href="#apply-form"
+          class="submit-btn"
+          style="
+            display: inline-block;
+            width: auto;
+            text-decoration: none;
+            padding: 15px 50px;
+          "
+        >
+          Apply Now →
+        </a>
+      </section>
+
+      <!-- Apply Form Section -->
+      <section
+        id="apply-form"
+        class="contact-section"
+        aria-labelledby="form-heading"
+      >
+        <div class="container">
+          <h2 id="form-heading">Apply for Home Loan / LAP</h2>
+          <div class="contact-content">
+            <div class="contact-form">
+              <form action="#" method="post">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="full_name"
+                    placeholder="Full Name"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="tel"
+                    name="mobile_number"
+                    placeholder="Mobile Number"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="date"
+                    name="date_of_birth"
+                    placeholder="Date of Birth"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="current_address"
+                    placeholder="Current Address (City + Full Address)"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+                <div class="form-group">
+                  <select name="employment_type" required aria-required="true">
+                    <option value="">Employment Type</option>
+                    <option value="salaried">Salaried</option>
+                    <option value="self_employed">Self-Employed</option>
+                    <option value="business">Business</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="company_business_name"
+                    placeholder="Company / Business Name"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="number"
+                    name="monthly_income_turnover"
+                    placeholder="Monthly Income / Annual Turnover"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="number"
+                    name="loan_amount"
+                    placeholder="Loan Amount Required"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+                <div class="form-group">
+                  <select name="purpose_of_loan" required aria-required="true">
+                    <option value="">Purpose of Loan</option>
+                    <option value="personal_use">Personal Use</option>
+                    <option value="business_expansion">
+                      Business Expansion
+                    </option>
+                    <option value="home_purchase">Home Purchase</option>
+                    <option value="home_renovation">Home Renovation</option>
+                    <option value="machine_purchase">Machine Purchase</option>
+                  </select>
+                </div>
+                <button type="submit" class="submit-btn">
+                  Submit Application
+                </button>
+              </form>
+            </div>
+
+            <div class="contact-info">
+              <h3>Contact Details</h3>
+              <div class="contact-details">
+                <p>
+                  <i class="location-icon" aria-hidden="true"></i>
+                  <span
+                    >FB-147, High Street Business Park,<br />Kapurwadi, Thane
+                    (W)-400 607, Maharashtra</span
+                  >
+                </p>
+                <p>
+                  <i class="phone-icon" aria-hidden="true"></i>
+                  <span>+91 9769207860 | +91 9702001230</span>
+                </p>
+                <p>
+                  <i class="email-icon" aria-hidden="true"></i>
+                  <span>info@alaknandasolutions.in</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <img
+              src="{{ url_for('static', filename='img/logo 1.png') }}"
+              alt="Alaknanda Solutions Logo"
+              class="footer-logo"
+            />
+            <h3>Alaknanda Solutions</h3>
+            <p>
+              Your trusted partner for financial solutions. Empowering
+              individuals and businesses with reliable loan options.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <div class="footer-section">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('index') }}#about-us">About Us</a></li>
+                <li>
+                  <a href="{{ url_for('index') }}#mission-vision"
+                    >Mission & Vision</a
+                  >
+                </li>
+                <li><a href="{{ url_for('index') }}#services">Services</a></li>
+                <li><a href="{{ url_for('index') }}#contact">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-section">
+              <h4>Our Services</h4>
+              <ul>
+                <li>
+                  <a href="{{ url_for('personal_loan') }}">Personal Loan</a>
+                </li>
+                <li>
+                  <a href="{{ url_for('business_loan') }}">Business Loan</a>
+                </li>
+                <li><a href="{{ url_for('home_loan') }}">Home Loan</a></li>
+                <li>
+                  <a href="{{ url_for('machine_loan') }}">Machine Loan</a>
+                </li>
+                <li><a href="{{ url_for('mice') }}">MICE</a></li>
+                <li><a href="{{ url_for('insurance') }}">Insurance</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-section">
+              <h4>Contact Info</h4>
+              <div class="contact-details">
+                <p>
+                  <i class="location-icon"></i>
+                  <span
+                    >FB-147, High Street Business Park,<br />Kapurwadi, Thane
+                    (W)-400 607, Maharashtra</span
+                  >
+                </p>
+                <p>
+                  <i class="phone-icon"></i>
+                  <span>+91 9769207860 | +91 9702001230</span>
+                </p>
+                <p>
+                  <i class="email-icon"></i>
+                  <span>info@alaknandasolutions.in</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <p>© 2025 Alaknanda Solutions. All rights reserved.</p>
+            <p class="developed-by">
+              Developed by
+              <span>
+                <a
+                  href="https://www.innovatehive.in/"
+                  target="_blank"
+                  style="
+                    text-decoration: none;
+                    color: inherit;
+                    font-weight: 600;
+                  "
+                  >InnovateHive</a
+                >
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+      <a
+        href="https://wa.me/919702001230"
+        target="_blank"
+        class="whatsapp-link"
+        aria-label="Contact us on WhatsApp"
+      >
+        <img
+          src="/static/img/WhatsApp.png"
+          alt="WhatsApp"
+          class="whatsapp-icon"
+        />
+        <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
+      </a>
+    </div>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>
